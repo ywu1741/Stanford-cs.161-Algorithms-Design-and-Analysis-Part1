@@ -19,6 +19,9 @@ integer_list = loadWords("IntegerArray.txt")
 
 
 def Sort_Count_Inversions(int_list):
+    """
+    Returns the number of inversions in a list.
+    """
     if len(int_list) == 1:
         inv = 0
         return int_list, inv
@@ -36,6 +39,9 @@ def Sort_Count_Inversions(int_list):
         Right, y = Sort_Count_Inversions(int_list[split:])
         
         def Merge_Count_Inversions(L,R):
+            """
+            Returns the split inversions and merges the two sorted arrays.
+            """
             fl = []
             n = len(L) + len(R)
             i = 0
@@ -61,4 +67,4 @@ def Sort_Count_Inversions(int_list):
         Full, z = Merge_Count_Inversions(Left,Right)
         return Full, x+y+z
     
-# Sort_Count_Inversions(integer_list)[1]
+Sort_Count_Inversions(integer_list)[1]
